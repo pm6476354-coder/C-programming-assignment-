@@ -1,0 +1,120 @@
+
+#include <stdio.h>
+
+// ---------------------------------------------
+// 1. ARRAY, FUNCTIONS, POINTER, TYPES OF ARRAY,
+//    AND OPERATORS — ALL IN ONE PROGRAM
+// ---------------------------------------------
+
+// Function Declaration (User Defined)
+void showArray();            // For 1D Array
+void showMatrix();           // For 2D Array
+void pointerExample();       // For Pointer
+void operatorExample();      // For Operators
+int addNumbers(int a, int b); // Function with argument & return
+
+int main() {
+    printf("----- C LANGUAGE ASSIGNMENT -----\n\n");
+
+    // 1️⃣ ARRAYS (Definition + Example)
+    // Array is a collection of similar data stored in continuous memory.
+    // Example of 1D Array:
+    showArray();
+
+    // 2️⃣ FUNCTION (Definition + Example)
+    // Function is a block of code used to perform a specific task.
+    int sum = addNumbers(10, 20);
+    printf("\nFunction Example (Sum using return type): %d\n", sum);
+
+    // 3️⃣ POINTER (Definition + Example)
+    // Pointer stores the address of another variable.
+    pointerExample();
+
+    // 4️⃣ TYPES OF ARRAY (1D and 2D)
+    showMatrix();
+
+    // 5️⃣ OPERATORS (All Types in Example)
+    operatorExample();
+
+    printf("\n----- END OF ASSIGNMENT -----\n");
+    return 0;
+}
+
+// ---------------------------------------------
+//  Function Definitions
+// ---------------------------------------------
+
+// 1️⃣ One Dimensional Array Example
+void showArray() {
+    int marks[5] = {85, 90, 78, 88, 92}; // Declaration + Initialization
+    printf("1D Array (Marks of Students):\n");
+    for(int i = 0; i < 5; i++) {
+        printf("marks[%d] = %d\n", i, marks[i]);
+    }
+}
+
+// 2️⃣ Function with Argument & Return Value
+int addNumbers(int a, int b) {
+    // This function takes two arguments and returns their sum
+    int result = a + b;
+    return result;
+}
+
+// 3️⃣ Pointer Example
+void pointerExample() {
+    int x = 50;
+    int *ptr;     // Pointer Declaration
+    ptr = &x;     // Pointer Initialization with address of variable
+
+    printf("\nPointer Example:\n");
+    printf("Value of x = %d\n", x);
+    printf("Address of x = %p\n", &x);
+    printf("Pointer ptr stores address = %p\n", ptr);
+    printf("Value stored at pointer ptr = %d\n", *ptr);
+}
+
+// 4️⃣ Two Dimensional Array Example
+void showMatrix() {
+    int matrix[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    printf("\n2D Array (Matrix Form):\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// 5️⃣ Operators Example
+void operatorExample() {
+    int a = 10, b = 5;
+
+    printf("\nOperators Example:\n");
+
+    // Arithmetic Operators
+    printf("Addition = %d\n", a + b);
+    printf("Subtraction = %d\n", a - b);
+    printf("Multiplication = %d\n", a * b);
+    printf("Division = %d\n", a / b);
+    printf("Modulus = %d\n", a % b);
+
+    // Relational Operators
+    printf("\nRelational Operators:\n");
+    printf("a > b = %d\n", a > b);
+    printf("a == b = %d\n", a == b);
+
+    // Logical Operators
+    printf("\nLogical Operators:\n");
+    printf("(a > b && a != b) = %d\n", (a > b && a != b));
+    printf("(a < b || a == 10) = %d\n", (a < b || a == 10));
+
+    // Assignment and Increment/Decrement
+    a += 2; // a = a + 2
+    printf("\nAfter a += 2, a = %d\n", a);
+    b--;    // Decrement
+    printf("After b--, b = %d\n", b);
+}
